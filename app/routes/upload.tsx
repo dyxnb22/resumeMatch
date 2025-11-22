@@ -18,6 +18,8 @@ const Upload = () => {
         setFile(file)
     }
 
+
+
     const handleAnalyze = async ({ companyName, jobTitle, jobDescription, file }: { companyName: string, jobTitle: string, jobDescription: string, file: File  }) => {
         setIsProcessing(true);
 
@@ -96,7 +98,18 @@ const Upload = () => {
                     {!isProcessing && (
                         <form id="upload-form" onSubmit={handleSubmit} className="flex flex-col gap-4 mt-8">
                             <div className="form-div">
-                                <label htmlFor="company-name">Company Name</label>
+                                <div className="flex items-center justify-between">
+                                    <label htmlFor="company-name">Company Name</label>
+
+                                    <a
+                                        href="https://www.linkedin.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="ml-4 text-blue-600 hover:underline text-sm"
+                                    >
+                                        Not having a target yet? Go through LinkedIn.
+                                    </a>
+                                </div>
                                 <input type="text" name="company-name" placeholder="Company Name" id="company-name" />
                             </div>
                             <div className="form-div">
